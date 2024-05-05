@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobics Játék</title>
+    <style>
+        #gameCanvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<audio id="backgroundMusic" src="backgroundMusic.mp3" loop></audio>
+<audio id="removeSound" src="removeSound.mp3"></audio>
+
+<script src="script.js"></script>
+
+<div id="endScreen" style="display: none;">
+    <input id="playerName" type="text" placeholder="Your name">
+    <button onclick="saveScore(document.getElementById('playerName').value, game.score); displayLeaderboard();">Submit Score</button>
+    <div id="leaderboard"></div>
+    <button id="playAgainButton" onclick="resetGame()" style="display: none;">Play Again</button>
+</div>
+</body>
+</html>
